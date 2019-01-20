@@ -1,7 +1,15 @@
 # type (r[1-9];w;u),circuit,name,[comment],[QQ],ZZ,PBSB,[ID],field1,part (m/s),datatypes/templates,divider/values,unit,comment
 # HC operation mode,,,,,,,,,,,,,
 *r,,,,,,"B504",,,,,,,
+*w,,,,,,"B505",,,,,,,
 r,,DateTime,Date Time,,,,00,,,dcfstate;btime;bdate;temp2,,,
+r,,Mode,Operation mode,,,,01,,,temp0;mcmode;IGN:2;hwcmode;mctype7;HEX;daynight,,,
+w,,SetTempDesired,Set desired temperature,,,,01,,,temp0,,,
+w,,SetMode,Set operation mode,,,,02,,,mcmode,,,
+w,,SetTempDesiredLow,Set desired lowered temperature,,,,0a,,,temp0,,,
+r,,Params,Parameters,,,,09,,,temp0;IGN:3;mctype7;temps;IGN;temps;temps;IGN,,,
+r,,Status0a,Status flow temperature/mixer/pump/desired flow temperature,,,,0A,,,temp:flowtemp;mixer;onoff:pump;onoff;temp0:flowtempdesired
+r,,Status,Desired flow/status/flow/desired temperature,,,,0D,,,temp0;onoff;temp;temp0,,,
 r,,Status16,Outside temperature,,,,16,,,temp,,,
 
 # HC operation mode2,,,,,,,,,,,,,
@@ -11,4 +19,4 @@ uw,,SetMode,Operation Mode,,,,00,,,hcmode,,,,flowtempdesired,,temp1,,,,hwctempde
 #potential last byte: currentmode,s,UCH,0=off;1=standby;2=heat;3=water,,
 r,,Status01,Vorlauftemperatur/Rücklauftemperatur/Aussentemperatur/WW Temperatur/Speichertemperatur/Pumpenstatus,,,,01,,,temp1;temp1;temp2;temp1;temp1;pumpstate,,,
 r,,Status02,Betriebsart/Maximaltemperatur/ReglerCurrentTEMP/Maximaltemperatur/ReglerCurrentTemp,,,,02,,,hwcmode;temp0;temp1;temp0;temp1,,,
-r,,Status,Status,,,,03,,,temp;press;press;hcmode2;HEX,,,
+r,,Status03,Status,,,,03,,,temp;press;press;hcmode2;HEX,,,
