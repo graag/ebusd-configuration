@@ -3,9 +3,9 @@
 *r,,,,,,"B504",,,,,,,
 *w,,,,,,"B505",,,,,,,
 r,,DateTime,Date Time,,,,00,,,dcfstate;btime;bdate;temp2,,,
-r,,Mode,Operation mode,,,,01,,,temp0;mcmode;IGN:2;hwcmode;mctype7;HEX;daynight,,,
+r,,Mode,Operation mode,,,,01,,,temp0;mcmode2;IGN:2;hwcmode;mctype7;HEX;daynight,,,
 w,,SetTempDesired,Set desired temperature,,,,01,,,temp0,,,
-w,,SetMode,Set operation mode,,,,02,,,mcmode,,,
+w,,SetMode,Set operation mode,,,,02,,,mcmode2,,,
 w,,SetTempDesiredLow,Set desired lowered temperature,,,,0a,,,temp0,,,
 r,,Params,Parameters,,,,09,,,temp0;IGN:3;mctype7;temps;IGN;temps;temps;IGN,,,
 r,,Status0a,Status flow temperature/mixer/pump/desired flow temperature,,,,0A,,,temp:flowtemp;mixer;onoff:pump;onoff;temp0:flowtempdesired
